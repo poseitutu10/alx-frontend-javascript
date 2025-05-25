@@ -74,3 +74,38 @@ const printTeacherFunction: printTeacherFunctionInterface = (firstName:string, l
 
 const interTeacher: string = printTeacherFunction("Phinehas", "Osei-Tutu");
 console.log(interTeacher);
+
+interface ClassProperties {
+  firstName: string;
+  lastName: string;
+}
+
+interface ClassConstructor {
+  new (fname: string, lname: string): ClassProperties;
+}
+
+
+class StudentClass implements ClassProperties {
+  firstName: string;
+  lastName: string;
+
+  constructor(fname: string, lname: string){
+    this.firstName = fname;
+    this.lastName = lname;
+  }
+
+  workOnHomework(): string{
+    return `Currently Working`;
+  }
+
+  displayName(): string{
+    return this.firstName;
+  }
+}
+
+const myClassInstance = (constructor: ClassConstructor, fname: string, lname: string): ClassProperties => {
+  return new constructor(fname, lname);
+}
+
+const classInstance = myClassInstance(StudentClass, "Phinehas", "Osei-Tutu");
+console.log(classInstance)
