@@ -54,3 +54,23 @@ const director1: Director = {
 };
 
 console.log(director1);
+
+const printTeacher = (firstName: string, lastName: string): string => {
+  return `${firstName[0].toUpperCase()}. ${lastName}`;
+}
+
+const printteacher: string = printTeacher("Joe", "Doe");
+console.log(printteacher);
+
+
+interface printTeacherFunctionInterface {
+  (firstName: string, lastName: string): string;
+}
+
+const printTeacherFunction: printTeacherFunctionInterface = (firstName:string, lastName: string) => {
+  return `${firstName[0].toUpperCase()}. ${lastName}`
+}
+
+
+const interTeacher: string = printTeacherFunction("Phinehas", "Osei-Tutu");
+console.log(interTeacher);
