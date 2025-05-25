@@ -23,9 +23,8 @@ const StudentList: Student[] = [student1, student2];
 
 console.log(StudentList);
 
-
 //Creating a teacher interface
-interface Teacher extends Pick<Student, "firstName" | "lastName">{
+interface Teacher extends Pick<Student, "firstName" | "lastName"> {
   fullTimeEmployee: boolean;
   yearsOfExperience?: number;
   location: string;
@@ -37,11 +36,21 @@ const teacher3: Teacher = {
   lastName: "Koney Okpoti",
   fullTimeEmployee: false,
   location: "London",
-  contract: false
+  contract: false,
+};
+
+console.log(teacher3);
+
+interface Director extends Teacher {
+  numberOfReports: number;
 }
 
-console.log(teacher3)
+const director1: Director = {
+  firstName: "Mathias",
+  lastName: "Doe",
+  location: "Sakumono",
+  fullTimeEmployee: true,
+  numberOfReports: 17,
+};
 
-
-
-
+console.log(director1);
