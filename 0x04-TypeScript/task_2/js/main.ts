@@ -77,3 +77,14 @@ const ex1 = executeWork(createEmployee(200));
 const ex2 = executeWork(createEmployee(700));
 console.log(ex1);
 console.log(ex2)
+
+//String Literal Types
+type Subjects = "Math" | "History";
+
+
+const teachClass = (todayClass: Subjects): string => {
+  return `Teaching ${todayClass}`;
+}
+
+const instanceLiteral = teachClass("History")
+console.log(instanceLiteral);
